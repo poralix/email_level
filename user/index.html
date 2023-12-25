@@ -1,0 +1,24 @@
+#!/usr/local/bin/php -n
+<?php
+include("include.php");
+parse_str($_SERVER['QUERY_STRING'], $_GET);
+$domain = (isset($_GET['domain']) && $_GET['domain']) ? $_GET['domain'] : false;
+
+if (!is_domain($domain))
+{
+	echo "Make sure you've entered a valid domain name.";
+	exit(0);
+}
+
+?>
+<h1>Email Level Installer</h1>
+
+<form name=info action="/CMD_PLUGINS/email_level/submit.php" method=POST>
+<input type=hidden name="action" value="install">
+<input type=hidden name="domain" value="<?php echo $domain;?>">
+Install an email level to the following web path(s):<br>
+<input type=checkbox name="http" value="yes" checked> <b>http</b>://www.<?php echo $domain;?>/<input type=text name=path value="email" size=10><br>
+<input type=checkbox name="https" value="yes" checked> <b>https</b>://www.<?php echo $domain;?>/<input type=text name=path2 value="email" size=10><br>
+<br>
+<input type=submit value="Create">
+</form>
