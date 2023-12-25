@@ -1,6 +1,6 @@
 <?php
-$host="localhost";
-$port="2222";
+$host='localhost';
+$port='2222';
 $ssl=true;
 
 $show_roundcube=true;
