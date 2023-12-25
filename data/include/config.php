@@ -1,10 +1,10 @@
 <?php
 $host="localhost";
 $port="2222";
-$ssl=false;
+$ssl=true;
 
 $show_roundcube=true;
-$show_squirrelmail=true;
-$show_uebimiau=true;
+$show_squirrelmail=false;
+$show_uebimiau=false;
 
 ?>
